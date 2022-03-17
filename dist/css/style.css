@@ -1,0 +1,28 @@
+.password-icon {
+  position: relative;
+  top: 0;
+  left: 78%;
+  font-size: 15px;
+  line-height: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+.password-icon-conf {
+  position: relative;
+  top: 0;
+  left: 70%;
+  font-size: 15px;
+  line-height: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.brand-name {
+  margin-right: 10px;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1.8em;
+}
+.body {
+  min-height: calc(100vh - 224px);
+}
