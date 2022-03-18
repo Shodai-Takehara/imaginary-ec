@@ -1,20 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <!-- 郵便番号から自動入力 -->
-  <script src="https://ajaxzip3.github.io/ajaxzip3.js"></script>
-  <title>新規登録画面</title>
-</head>
-
-<body>
-  <?php include "header.php" ?>
+  <?php include "./parts/before-header.php" ?>
   <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
     <section>
       <h3 class="brand-name font-bold text-base sm:text-lg md:text-xl lg:text-2xl">
@@ -95,10 +79,4 @@
       </form>
     </section>
   </main>
-  <?php include "footer.php" ?>
-  <script src="./javascript/jquery-3.6.0.min.js"></script>
-  <script src="./javascript/common.js"></script>
-  <script src="./javascript/main.js"></script>
-</body>
-
-</html>
+  <?php include "./parts/footer.php" ?>

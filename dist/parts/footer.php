@@ -1,4 +1,4 @@
-<footer class="footer p-10 bg-gray-100 text-base-content">
+<footer class="footer p-8 bg-gray-100 text-base-content">
   <div>
     <span class="footer-title">Services</span>
     <a href="#" class="link link-hover">Lauren Lifeとは</a>
@@ -17,7 +17,7 @@
 </footer>
 <footer class="footer items-center p-4 bg-neutral text-neutral-content">
   <div class="items-center grid-flow-col">
-    <a href="#"><span class="brand-name font-semibold text-xl tracking-tight">Lauren Life</span></a>
+    <a href="./index.php"><span class=" brand-name font-semibold text-xl tracking-tight">Lauren Life</span></a>
     <p>Copyright © 2022 - All right reserved</p>
   </div>
   <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end mr-4">
@@ -32,3 +32,9 @@
     </a>
   </div>
 </footer>
+<script src="./javascript/jquery-3.6.0.min.js"></script>
+<script src="./javascript/main.js"></script>
+<script src="./javascript/common.js"></script>
+</body>
+
+</html>
