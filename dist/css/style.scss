@@ -1,0 +1,104 @@
+$white: #fff;
+$black: #000;
+
+// toppageの背景画像
+.top-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/toppage.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+
+  @media screen and (max-width: 640px) {
+    background-size: cover;
+    width: 640px;
+    height: 640px;
+  }
+}
+/* パスワード確認する目のアイコン */
+.password-icon {
+  position: relative;
+  top: 0;
+  left: 78%;
+  font-size: 15px;
+  line-height: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+.password-icon-conf {
+  position: relative;
+  top: 0;
+  left: 70%;
+  font-size: 15px;
+  line-height: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ロゴのフォント */
+.brand-name {
+  margin-right: 10px;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+  font-size: 1.8em;
+}
+/* ログイン画面調整 */
+.body {
+  min-height: calc(100vh - 224px);
+}
+
+/* hamburgermenu */
+.hamburger {
+  width: 40px;
+  height: 36px;
+  position: fixed;
+  top: 42px;
+  right: 18px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.button-line {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: $white;
+  position: relative;
+
+  &.open {
+    background-color: transparent;
+
+    &::after {
+      transform: rotate(-45deg);
+      transition: 0.5s;
+      background-color: $white;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      transition: 0.5s;
+      background-color: $white;
+    }
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    position: absolute;
+    transition: 0.5s;
+  }
+
+  &::before {
+    transform: translateY(-12px);
+  }
+
+  &::after {
+    transform: translateY(12px);
+  }
+}
