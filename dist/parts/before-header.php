@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="js-hamburger w-full block flex-grow lg:flex lg:items-center lg:w-auto hidden">
-        <div class="text-sm lg:flex-grow">
+        <div class="text-sm lg:flex-grow select-none">
           <a href="#" class="js-list-index block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black mr-4">
             商品一覧
           </a>
@@ -41,7 +41,7 @@
           </a>
         </div>
         <div>
-          <a href="../dist/login.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-black hover:bg-gray-500 mt-4 lg:mt-0">
+          <a href="../dist/login.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-black hover:bg-gray-500 mt-4 lg:mt-0 select-none">
             ログイン
           </a>
         </div>
