@@ -1,6 +1,7 @@
 <?php include "./parts/before-header.php" ?>
 
-<main class="top-wrapper">
-</main>
+<div class="top-wrapper">
+  <a class="link" href="#"></a>
+</div>
 
 <?php include "./parts/footer.php" ?>

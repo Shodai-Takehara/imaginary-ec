@@ -7,7 +7,7 @@
       <p class="text-gray-600 pt-2 text-xs">アカウントの作成をしてください</p>
     </section>
 
-    <section class="mt-10">
+    <section class="mt-8">
       <form class="flex flex-col" method="POST" action="#">
         <div class="flex flex-wrap">
           <aside class="w-full lg:w-1/2 mb-4 pt-3 rounded bg-gray-200">
@@ -75,8 +75,24 @@
             <span class="select-none">同意する</span>
           </label>
         </div>
-        <input class="disable bg-zinc-600 hover:bg-zinc-700 disabled:bg-zinc-300 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 shadow-md" type="submit" value="新規登録" disabled />
+        <input id="js-input" class="disable bg-zinc-600 hover:bg-zinc-700 disabled:bg-zinc-300 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 shadow-md" type="submit" value="新規登録" disabled />
       </form>
+    </section>
+    <section>
+    <!-- <div role="alert">
+      <div class="bg-red-500 text-white font-bold rounded-t px-4 py-2">
+        Danger
+      </div>
+      <div class="border border-t-0 border-red-400 rounded-b bg-red-100 px-4 py-3 text-red-700">
+        <p>Something not ideal might be happening.</p>
+      </div>
+    </div> -->
+    <div id="pass-error">
+      <p class="error-message">
+        パスワードが一致しません<span class="dismiss">&times;</span>
+      </p>
+    </div>
+
     </section>
   </main>
   <?php include "./parts/footer.php" ?>
