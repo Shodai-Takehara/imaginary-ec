@@ -5,14 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>スタッフ追加保存</title>
-  <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 
   <?php
   try {
-    require_once "../db/base.php";
+    require_once "../common/basedb.php";
     // echo "データベース{$dbName}に接続しました" . "<br>";
     $sql = "INSERT INTO admins(name, password) VALUES(:name, :password)";
     $stm = $pdo->prepare($sql);
