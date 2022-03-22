@@ -27,23 +27,45 @@
       </div>
       <div class="js-hamburger w-full block flex-grow lg:flex lg:items-center lg:w-auto hidden">
         <div class="text-sm lg:flex-grow select-none">
-          <a href="#" class="js-list-index block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black mr-4">
+          <a href="#" class="js-list-index block mt-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2 mr-4">
             商品一覧
           </a>
-          <a href="#" class="js-list-men block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black mr-4">
+          <a href="#" class="js-list-men block mt-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2 mr-4">
             MENS
           </a>
-          <a href="#" class="js-list-women block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black mr-4">
+          <a href="#" class="js-list-women block mt-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2 mr-4">
             WOMENS
           </a>
-          <a href="#" class="js-list-sale block mt-4 lg:inline-block lg:mt-0 text-white hover:text-black">
+          <a href="#" class="js-list-sale block mt-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
             SALE
           </a>
         </div>
-        <div>
-          <a href="../dist/login.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-black hover:bg-gray-500 mt-4 lg:mt-0 select-none">
-            ログイン
+        <div class="flex-grow invisible lg:visible select-none">
+          <form action="#" method="POST">
+            <input type="text" name="search" placeholder="キーワード入力" class="input input-bordered input-sm w-75 max-w-xs">
+            <input class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white pt-2 pb-1 px-3 rounded fa" type="submit" value="&#xf002;">
+          </form>
+        </div>
+        <div class="text-sm lg:flex-none select-none">
+          <a href="#" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
+            <i class="far fa-heart"></i> お気に入り
           </a>
+          <a href="#" class="block mt-4 mr-2 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
+            <i class="fa fa-shopping-bag"></i> マイバッグ
+          </a>
+          <div class="dropdown dropdown-hover">
+            <label tabindex="1" class="btn"><i class="fas fa-sign-in-alt"></i>&nbsp;ログイン</label>
+            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a href="../dist/login.php" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-black hover:underline underline-offset-2">
+                  <i class="fa fa-user"></i> ログイン
+                </a>
+              </li>
+              <li><a href="../dist/signup.php" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-black hover:underline underline-offset-2">
+                  <i class="fa fa-user-plus"></i> 新規登録
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </nav>

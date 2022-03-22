@@ -10,7 +10,6 @@
   opacity: 0.8;
   /* 全体をlinkにする */
 }
-
 .top-wrapper .link {
   display: block;
   position: absolute;
@@ -20,7 +19,6 @@
   height: 100%;
   cursor: default;
 }
-
 @media screen and (max-width: 640px) {
   .top-wrapper {
     background-size: cover;
@@ -59,7 +57,7 @@
 /* ロゴのフォント */
 .brand-name {
   margin-right: 10px;
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: 1.8em;
 }
 
@@ -86,27 +84,19 @@
   background-color: #fff;
   position: relative;
 }
-
 .button-line.open {
   background-color: transparent;
 }
-
 .button-line.open::after {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  -webkit-transition: 0.5s;
+  transform: rotate(-45deg);
   transition: 0.5s;
   background-color: #fff;
 }
-
 .button-line.open::before {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  -webkit-transition: 0.5s;
+  transform: rotate(45deg);
   transition: 0.5s;
   background-color: #fff;
 }
-
 .button-line::before, .button-line::after {
   content: "";
   display: block;
@@ -114,18 +104,13 @@
   height: 100%;
   background-color: #fff;
   position: absolute;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
-
 .button-line::before {
-  -webkit-transform: translateY(-12px);
-          transform: translateY(-12px);
+  transform: translateY(-12px);
 }
-
 .button-line::after {
-  -webkit-transform: translateY(12px);
-          transform: translateY(12px);
+  transform: translateY(12px);
 }
 
 /* 仮のフラッシュメッセージ */
@@ -147,10 +132,8 @@
       -ms-user-select: none;
           user-select: none;
 }
-
 .error-message .dismiss {
   float: right;
   font-size: 14px;
   cursor: pointer;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
