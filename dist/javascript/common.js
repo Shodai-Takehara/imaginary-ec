@@ -83,8 +83,4 @@ $(function () {
     $(".button-line").toggleClass("open");
     $(".js-hamburger").toggleClass("hidden");
   });
-  // ヘッダーのドロップダウンメニュー
-  $(".js-dropdown").on("click", () => {
-    $(".js-dropdown ul").toggleClass("hidden");
-  });
 });

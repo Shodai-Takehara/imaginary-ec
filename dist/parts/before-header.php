@@ -43,7 +43,7 @@
         <div class="flex-grow invisible lg:visible select-none">
           <form action="#" method="POST">
             <input type="text" name="search" placeholder="キーワード入力" class="input input-bordered input-sm w-75 max-w-xs">
-            <input class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white pt-2 pb-1 px-3 rounded fa" type="submit" value="&#xf002;">
+            <input class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white pt-2 pb-1 px-3 rounded cursor-pointer fa" type="submit" value="&#xf002;">
           </form>
         </div>
         <div class="text-sm lg:flex-none select-none">
@@ -54,7 +54,7 @@
             <i class="fa fa-shopping-bag"></i> マイバッグ
           </a>
           <div class="dropdown dropdown-hover">
-            <label tabindex="1" class="btn"><i class="fas fa-sign-in-alt"></i>&nbsp;ログイン</label>
+            <label tabindex="0" class="btn"><i class="fas fa-sign-in-alt"></i>&nbsp;ログイン</label>
             <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
               <li><a href="../dist/login.php" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-black hover:underline underline-offset-2">
                   <i class="fa fa-user"></i> ログイン
