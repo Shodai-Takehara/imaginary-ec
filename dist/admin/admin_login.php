@@ -9,9 +9,12 @@
 
 <body>
   スタッフログイン<br /><br />
-  <form action="admin_login_check.php" method="POST">
+  <form action="admin_login_top.php" method="POST">
     スタッフコード<br />
     <input type="text" name="admin_id" />
+    <br /><br />
+    スタッフネーム<br />
+    <input type="text" name="name" />
     <br /><br />
     パスワード<br />
     <input type="password" name="password" />

@@ -1,14 +1,14 @@
 <?php
-// session_start();
-// session_regenerate_id(true);
-// if (isset($_SESSION["login"]) === false) {
-//   echo "ログインしていません。<br><br>";
-//   echo "<a href='admin_login.php'>ログイン画面へ</a>";
-//   exit();
-// } else {
-//   echo $_SESSION["name"] . "さんログイン中";
-//   echo "<br><br>";
-// }
+require_once "../common/admin_header.php";
+session_regenerate_id(true);
+if (isset($_SESSION["login"])) {
+  echo $_SESSION["admin_name"] . "さんログイン中";
+  echo "<br><br>";
+} else {
+  echo "ログインしていません。<br><br>";
+  echo "<a href='admin_login.php'>ログイン画面へ</a>";
+  exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,18 +17,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>管理者追加チェック</title>
+  <title>新規管理者追加チェック</title>
 </head>
 
 <body>
 
   <?php
-  require_once("../common/common.php");
-
-  $post = sanitize($_POST);
-  $name = $post["name"];
-  $password = $post["password"];
-  $password_conf = $post["password-conf"];
+  $name = $_POST["name"];
+  $password = $_POST["password"];
+  $password_conf = $_POST["password-conf"];
 
   if (empty($name) === true) {
     echo "名前が入力されていません。<br><br>";
@@ -52,7 +49,6 @@
       </form>
     EOF;
   } else {
-    $password = md5($password);
     echo <<<EOF
       上記スタッフを追加しますか？<br><br>
       <form action='admin_add_done.php' method='POST'>

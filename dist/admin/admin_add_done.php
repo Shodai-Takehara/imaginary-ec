@@ -12,21 +12,20 @@
   <?php
   try {
     require_once "../common/basedb.php";
-    // echo "データベース{$dbName}に接続しました" . "<br>";
     $sql = "INSERT INTO admins(name, password) VALUES(:name, :password)";
     $stm = $pdo->prepare($sql);
     $stm->bindValue(":name", $_POST["name"], PDO::PARAM_STR);
-    $stm->bindValue(":password", $_POST["password"], PDO::PARAM_STR);
+    // passwordの暗号化
+    $hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    $stm->bindValue(":password", $hash, PDO::PARAM_STR);
     $stm->execute();
+    $id = $pdo->lastInsertId(); // AUTO INCREMENTの主キーを取得
     echo "スタッフを追加しました。<br><br>";
   } catch (Exception $e) {
     echo "<a href='./admin_add.php'>追加画面へ</a>";
-    echo "<a href='../admin_login/admin_login.php'>ログイン画面へ</a>";
   }
   ?>
-  <a href="./admin_add.php">追加画面へ</a>
-  <a href="admin_list.php">スタッフ一覧へ</a>
-
+  <?php include "admin_menu.php" ?>
 </body>
 
 </html>
