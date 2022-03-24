@@ -83,4 +83,16 @@ $(function () {
     $(".button-line").toggleClass("open");
     $(".js-hamburger").toggleClass("hidden");
   });
+  // zipcodeのハイフン削除
+  $('input[name="zip"]').on("paste change", function () {
+    let val = $(this).val();
+    val = val.replace(/[^\d]+/g, "");
+    $(this).val(val);
+  });
+  // 電話番号のハイフン削除
+  $('input[name="phone"]').on("paste change", function () {
+    let val = $(this).val();
+    val = val.replace(/[^\d]+/g, "");
+    $(this).val(val);
+  });
 });

@@ -27,3 +27,11 @@ document.getElementById("js-eye-conf").addEventListener("click", () => {
     eye.className = "fa fa-eye-slash";
   }
 });
+// zip-code確認
+function is_postcode(postcode) {
+  if (postcode.match(/^\d{3}[-]?\d{4}$/)) {
+    return true;
+  } else {
+    return false;
+  }
+}
