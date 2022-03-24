@@ -19,8 +19,11 @@
     $hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
     $stm->bindValue(":password", $hash, PDO::PARAM_STR);
     $stm->execute();
+    $result = $stm->fetch(PDO::FETCH_ASSOC);
     $id = $pdo->lastInsertId(); // AUTO INCREMENTの主キーを取得
-    echo "スタッフを追加しました。<br><br>";
+    echo "下記スタッフを追加しました。<br><br>";
+    echo "スタッフコード：No" . $id . "<br>";
+    echo "スタッフネーム：" . $_POST["name"] . "<br><br>";
   } catch (Exception $e) {
     echo "<a href='./admin_add.php'>追加画面へ</a>";
   }
