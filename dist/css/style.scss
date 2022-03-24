@@ -114,7 +114,8 @@ $black: #000;
   }
 }
 /* 仮のフラッシュメッセージ */
-.error-message {
+.error-message,
+.pass-error-message {
   display: block;
   margin: 0 auto;
   margin-top: 8px;

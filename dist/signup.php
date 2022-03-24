@@ -83,6 +83,9 @@
       <p class="error-message">
         パスワードが一致しません<span class="dismiss">&times;</span>
       </p>
+      <p class="pass-error-message">
+        パスワードは半角英数字6文字以上で入力下さい<span class="dismiss">&times;</span>
+      </p>
     </div>
   </section>
 </main>
