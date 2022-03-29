@@ -61,7 +61,7 @@ if (isset($_POST["email"], $_POST["password"])) {
           <a href="signup.php" class="text-xs text-zinc-600 hover:text-zinc-700 hover:underline mb-4">新規登録の方はこちら</a>
         </div>
         <div class="flex justify-end">
-          <a href="#" class="text-xs text-zinc-600 hover:text-zinc-700 hover:underline mb-6">パスワードをお忘れの方はこちら</a>
+          <a href="email-forgot.php" class="text-xs text-zinc-600 hover:text-zinc-700 hover:underline mb-6">パスワードをお忘れの方はこちら</a>
         </div>
         <input type="submit" class="cursor-pointer bg-zinc-600 hover:bg-zinc-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 shadow-md" value="ログイン" />
       </form>
