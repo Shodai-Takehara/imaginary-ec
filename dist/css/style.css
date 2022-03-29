@@ -114,7 +114,8 @@
 }
 
 /* 仮のフラッシュメッセージ */
-.error-message {
+.error-message,
+.pass-error-message {
   display: block;
   margin: 0 auto;
   margin-top: 8px;
@@ -132,7 +133,8 @@
       -ms-user-select: none;
           user-select: none;
 }
-.error-message .dismiss {
+.error-message .dismiss,
+.pass-error-message .dismiss {
   float: right;
   font-size: 14px;
   cursor: pointer;

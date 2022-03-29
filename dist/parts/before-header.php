@@ -1,3 +1,9 @@
+<?php
+if (!isset($_SESSION)) {
+  session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -54,16 +60,36 @@
             <i class="fa fa-shopping-bag"></i> マイバッグ
           </a>
           <div class="dropdown dropdown-hover">
-            <label tabindex="0" class="btn"><i class="fas fa-sign-in-alt"></i>&nbsp;ログイン</label>
+            <label tabindex="0" class="btn"><i class="fas fa-caret-square-down"></i>&nbsp;MENU</label>
             <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-              <li><a href="../dist/login.php" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-black hover:underline underline-offset-2">
-                  <i class="fa fa-user"></i> ログイン
-                </a>
-              </li>
-              <li><a href="../dist/signup.php" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-black hover:underline underline-offset-2">
-                  <i class="fa fa-user-plus"></i> 新規登録
-                </a>
-              </li>
+              <?php if (empty($_SESSION))
+                echo <<<EOF
+                <li>
+                  <a href="../dist/login.php" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-black hover:underline underline-offset-2">
+                    <i class="fa fa-user"></i> ログイン
+                  </a>
+                </li>
+                <li>
+                  <a href="../dist/signup.php" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-black hover:underline underline-offset-2">
+                    <i class="fa fa-user-plus"></i> 新規登録
+                  </a>
+                </li>
+                EOF;
+              ?>
+              <?php if (!empty($_SESSION))
+                echo <<<EOF
+                <li>
+                  <a href="#" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-black hover:underline underline-offset-2">
+                  <i class="fas fa-file-alt"></i> マイページ
+                  </a>
+                </li>
+                <li>
+                  <a href="../dist/user/logout.php" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-black hover:underline underline-offset-2">
+                    <i class="fas fa-sign-out-alt"></i> ログアウト
+                  </a>
+                </li>
+                EOF;
+              ?>
             </ul>
           </div>
         </div>
