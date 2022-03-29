@@ -1,5 +1,33 @@
 <?php
 session_start();
+
+if (isset($_POST["email"], $_POST["password"])) {
+  try {
+    require_once "./common/basedb.php";
+    $sql = "SELECT * FROM users WHERE email = :email";
+    $stm = $pdo->prepare($sql);
+    $stm->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
+    $stm->execute();
+    $result = $stm->fetch(PDO::FETCH_ASSOC);
+    var_dump($result);
+    if ($result) {
+      if (password_verify($_POST["password"], $result["password"])) {
+        $_SESSION["user_id"] = $result["user_id"];
+        $_SESSION["name"] = $result["last_name"];
+        header("Location:index.php");
+        exit();
+      } else {
+        header("Location:login.php");
+        exit();
+      }
+    } else {
+      header("Location:login.php");
+      exit();
+    }
+  } catch (Exception $e) {
+    echo "接続できませんでした。";
+  }
+}
 ?>
 
 <div class="body">
@@ -15,14 +43,14 @@ session_start();
     </section>
 
     <section class="mt-10">
-      <form class="flex flex-col" method="POST" action="index.php">
+      <form class="flex flex-col" method="POST">
         <div class="mb-4 pt-3 rounded bg-gray-200">
           <label class="block text-gray-700 text-xs font-bold mb-2 ml-3" for="email">メールアドレス</label>
-          <input type="text" id="email" required autofocus class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-zinc-700 transition duration-500 px-3 pb-3; }" />
+          <input type="email" name="email" required autofocus class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-zinc-700 transition duration-500 px-3 pb-3" />
         </div>
         <div class="mb-4 pt-3 rounded bg-gray-200">
           <label class="block text-gray-700 text-xs font-bold mb-2 ml-3" for="password">パスワード</label>
-          <input type="password" id="password" required class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-zinc-700 transition duration-500 px-3 pb-3" />
+          <input type="password" name="password" required class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-zinc-700 transition duration-500 px-3 pb-3" />
         </div>
         <div class="flex justify-end">
           <a href="signup.php" class="text-xs text-zinc-600 hover:text-zinc-700 hover:underline mb-4">新規登録の方はこちら</a>
@@ -30,9 +58,7 @@ session_start();
         <div class="flex justify-end">
           <a href="#" class="text-xs text-zinc-600 hover:text-zinc-700 hover:underline mb-6">パスワードをお忘れの方はこちら</a>
         </div>
-        <button class="bg-zinc-600 hover:bg-zinc-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 shadow-md" type="submit">
-          ログイン
-        </button>
+        <input type="submit" class="cursor-pointer bg-zinc-600 hover:bg-zinc-700 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 shadow-md" value="ログイン" />
       </form>
     </section>
   </main>

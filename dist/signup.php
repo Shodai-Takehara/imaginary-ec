@@ -25,12 +25,15 @@ if (isset($_POST["email"])) {
     if ($stm->execute()) {
       // echo "登録されました。";
       header("Location:login.php");
+      exit();
     } else {
       // echo "登録できませんでした。";
       header("Location:signup.php");
+      exit();
     }
   } catch (Exception $e) {
-    echo "接続できませんでした。";
+    $msg = $e->getMessage();
+    echo $msg;
   }
 }
 ?>
@@ -111,7 +114,7 @@ if (isset($_POST["email"])) {
           <span class="select-none">同意する</span>
         </label>
       </div>
-      <input id="js-input" class="disable bg-zinc-600 hover:bg-zinc-700 disabled:bg-zinc-300 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 shadow-md" type="submit" value="新規登録" disabled />
+      <input id="js-input" class="disable cursor-pointer bg-zinc-600 hover:bg-zinc-700 disabled:bg-zinc-300 text-white font-bold py-2 rounded shadow-lg hover:shadow-xl transition duration-200 shadow-md" type="submit" value="新規登録" disabled />
     </form>
   </section>
   <section>
