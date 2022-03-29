@@ -1,3 +1,39 @@
+<?php
+if (isset($_POST["email"])) {
+  try {
+    require_once "./common/basedb.php";
+    $sql = "INSERT INTO users(last_name, first_name, last_furi_name, first_furi_name, 
+                              email, password, phone, zipcode, prefecture, address)
+                      VALUES(:last_name, :first_name, :last_furi_name, :first_furi_name, 
+                              :email, :password, :phone, :zipcode, :prefecture, :address)";
+    $stm = $pdo->prepare($sql);
+    $stm->bindValue(":last_name", $_POST["lname"], PDO::PARAM_STR);
+    $stm->bindValue(":first_name", $_POST["fname"], PDO::PARAM_STR);
+    $stm->bindValue(":last_furi_name", $_POST["lfuri"], PDO::PARAM_STR);
+    $stm->bindValue(":first_furi_name", $_POST["ffuri"], PDO::PARAM_STR);
+    $stm->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
+    $hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    $stm->bindValue(":password", $hash, PDO::PARAM_STR);
+    $stm->bindValue(":phone", $_POST["phone"], PDO::PARAM_STR);
+    $stm->bindValue(":zipcode", $_POST["zip"], PDO::PARAM_STR);
+    $stm->bindValue(":prefecture", $_POST["pref"], PDO::PARAM_STR);
+    $stm->bindValue(":address", $_POST["address"], PDO::PARAM_STR);
+    $result = $stm->fetch(PDO::FETCH_ASSOC);
+    if ($result) {
+      // 同一のemailがあったときの処理
+    }
+    if ($stm->execute()) {
+      // echo "登録されました。";
+      header("Location:login.php");
+    } else {
+      // echo "登録できませんでした。";
+      header("Location:signup.php");
+    }
+  } catch (Exception $e) {
+    echo "接続できませんでした。";
+  }
+}
+?>
 <?php include "./parts/before-header.php" ?>
 <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl">
   <section>
@@ -8,7 +44,7 @@
   </section>
 
   <section class="mt-8">
-    <form class="flex flex-col" method="POST" action="#">
+    <form class="flex flex-col" method="POST">
       <div class="flex flex-wrap">
         <aside class="w-full lg:w-1/2 mb-4 pt-3 rounded bg-gray-200">
           <label class="block text-gray-700 text-xs font-bold mb-2 ml-3" for="lname">姓</label>
@@ -35,7 +71,7 @@
       </div>
       <div class="mb-4 pt-3 rounded bg-gray-200">
         <label class="block text-gray-700 text-xs font-bold mb-2 ml-3" for="phone">電話番号 <span class="text-gray-500">(ハイフンなし)</span></label>
-        <input type="text" id="phone" name="phone" required class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-zinc-600 transition duration-500 px-3 pb-3; }" />
+        <input type="text" id="phone" name="phone" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-zinc-600 transition duration-500 px-3 pb-3; }" />
       </div>
       <div>
         <div class="flex flex-wrap">

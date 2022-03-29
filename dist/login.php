@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <div class="body">
   <?php include "./parts/before-header.php" ?>
   <main class="bg-white max-w-lg mx-auto p-8 md:p-12 my-10 rounded-lg shadow-2xl flex-col">
@@ -11,7 +15,7 @@
     </section>
 
     <section class="mt-10">
-      <form class="flex flex-col" method="POST" action="#">
+      <form class="flex flex-col" method="POST" action="index.php">
         <div class="mb-4 pt-3 rounded bg-gray-200">
           <label class="block text-gray-700 text-xs font-bold mb-2 ml-3" for="email">メールアドレス</label>
           <input type="text" id="email" required autofocus class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-zinc-700 transition duration-500 px-3 pb-3; }" />
