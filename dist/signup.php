@@ -1,4 +1,10 @@
 <?php
+session_start();
+// Login済だったらTopPageへ戻る
+if (isset($_SESSION["user_id"])) {
+  header("Location: ../dist/index.php");
+  exit();
+}
 if (isset($_POST["email"])) {
   try {
     require_once "./common/basedb.php";

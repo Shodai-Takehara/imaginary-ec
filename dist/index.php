@@ -1,5 +1,4 @@
 <?php
-// session_start();
 include "./parts/before-header.php"
 
 ?>

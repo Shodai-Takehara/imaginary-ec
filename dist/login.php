@@ -1,5 +1,10 @@
 <?php
 session_start();
+// Login済だったらTopPageへ戻る
+if (isset($_SESSION["user_id"])) {
+  header("Location: ../dist/index.php");
+  exit();
+}
 
 if (isset($_POST["email"], $_POST["password"])) {
   try {
@@ -9,9 +14,9 @@ if (isset($_POST["email"], $_POST["password"])) {
     $stm->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
     $stm->execute();
     $result = $stm->fetch(PDO::FETCH_ASSOC);
-    var_dump($result);
     if ($result) {
       if (password_verify($_POST["password"], $result["password"])) {
+        $_SESSION["login"] = true;
         $_SESSION["user_id"] = $result["user_id"];
         $_SESSION["name"] = $result["last_name"];
         header("Location:index.php");
