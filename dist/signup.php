@@ -8,34 +8,39 @@ if (isset($_SESSION["user_id"])) {
 if (isset($_POST["email"])) {
   try {
     require_once "./common/basedb.php";
-    $sql = "INSERT INTO users(last_name, first_name, last_furi_name, first_furi_name, 
+    $sql = "SELECT * FROM users WHERE email = :email";
+    $stm = $pdo->prepare($sql);
+    $stm->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
+    $stm->execute();
+    $result = $stm->fetch(PDO::FETCH_ASSOC);
+    if ($result) {
+      echo "このメールアドレスは使用できません";
+    } else {
+      require_once "./common/basedb.php";
+      $sql = "INSERT INTO users(last_name, first_name, last_furi_name, first_furi_name, 
                               email, password, phone, zipcode, prefecture, address)
                       VALUES(:last_name, :first_name, :last_furi_name, :first_furi_name, 
                               :email, :password, :phone, :zipcode, :prefecture, :address)";
-    $stm = $pdo->prepare($sql);
-    $stm->bindValue(":last_name", $_POST["lname"], PDO::PARAM_STR);
-    $stm->bindValue(":first_name", $_POST["fname"], PDO::PARAM_STR);
-    $stm->bindValue(":last_furi_name", $_POST["lfuri"], PDO::PARAM_STR);
-    $stm->bindValue(":first_furi_name", $_POST["ffuri"], PDO::PARAM_STR);
-    $stm->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
-    $hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
-    $stm->bindValue(":password", $hash, PDO::PARAM_STR);
-    $stm->bindValue(":phone", $_POST["phone"], PDO::PARAM_STR);
-    $stm->bindValue(":zipcode", $_POST["zip"], PDO::PARAM_STR);
-    $stm->bindValue(":prefecture", $_POST["pref"], PDO::PARAM_STR);
-    $stm->bindValue(":address", $_POST["address"], PDO::PARAM_STR);
-    $result = $stm->fetch(PDO::FETCH_ASSOC);
-    if ($result) {
-      // 同一のemailがあったときの処理
-    }
-    if ($stm->execute()) {
-      // echo "登録されました。";
-      header("Location:login.php");
-      exit();
-    } else {
-      // echo "登録できませんでした。";
-      header("Location:signup.php");
-      exit();
+      $stm = $pdo->prepare($sql);
+      $stm->bindValue(":last_name", $_POST["lname"], PDO::PARAM_STR);
+      $stm->bindValue(":first_name", $_POST["fname"], PDO::PARAM_STR);
+      $stm->bindValue(":last_furi_name", $_POST["lfuri"], PDO::PARAM_STR);
+      $stm->bindValue(":first_furi_name", $_POST["ffuri"], PDO::PARAM_STR);
+      $stm->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
+      $hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
+      $stm->bindValue(":password", $hash, PDO::PARAM_STR);
+      $stm->bindValue(":phone", $_POST["phone"], PDO::PARAM_STR);
+      $stm->bindValue(":zipcode", $_POST["zip"], PDO::PARAM_STR);
+      $stm->bindValue(":prefecture", $_POST["pref"], PDO::PARAM_STR);
+      $stm->bindValue(":address", $_POST["address"], PDO::PARAM_STR);
+      if ($stm->execute()) {
+        header("Location:login.php");
+        exit();
+      } else {
+        header("Location:signup.php");
+        echo "登録できませんでした。";
+        exit();
+      }
     }
   } catch (Exception $e) {
     $msg = $e->getMessage();
