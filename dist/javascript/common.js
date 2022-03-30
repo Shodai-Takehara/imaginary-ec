@@ -147,4 +147,9 @@ $(function () {
     $(".button-line").toggleClass("open");
     $(".js-hamburger").toggleClass("hidden");
   });
+  // flash message
+  setTimeout("$('.js-flash').fadeOut('slow')", 5000);
+  $(".dismiss").on("click", () => {
+    $(".js-flash").fadeOut("slow");
+  });
 });

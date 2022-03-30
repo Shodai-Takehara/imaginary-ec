@@ -62,7 +62,7 @@ if (!isset($_SESSION)) {
           <div class="dropdown dropdown-hover">
             <label tabindex="0" class="btn"><i class="fas fa-caret-square-down"></i>&nbsp;MENU</label>
             <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-              <?php if (empty($_SESSION))
+              <?php if (!isset($_SESSION["login"]))
                 echo <<<EOF
                 <li>
                   <a href="../dist/login.php" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-black hover:underline underline-offset-2">
@@ -76,7 +76,7 @@ if (!isset($_SESSION)) {
                 </li>
                 EOF;
               ?>
-              <?php if (!empty($_SESSION))
+              <?php if (isset($_SESSION["login"]))
                 echo <<<EOF
                 <li>
                   <a href="#" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-black hover:underline underline-offset-2">
