@@ -83,17 +83,6 @@ $(function () {
     let text = hankana2Zenkana(val);
     $(this).val(text);
   });
-  // Emailのバリデーション（正規表現）
-  // $('input[name="email"]').on("change", function () {
-  //   let val = $(this).val();
-  //   let pattern =
-  //     /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]+.[A-Za-z0-9]+$/;
-  //   if (val !== pattern) {
-  //     $(".js-mail-error").removeClass("hidden");
-  //   } else {
-  //     $(".js-mail-error").addClass("hidden");
-  //   }
-  // });
   // formバリデーションここまで
 
   // toppageの写真入れ替え(4箇所)

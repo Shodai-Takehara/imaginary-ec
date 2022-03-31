@@ -143,3 +143,24 @@ function checkPassword(str) {
   let res = reg.test(str);
   return res;
 }
+
+// メールアドレスのパターンを正規表現にてチェック
+let form = document.getElementById("email");
+let result = document.getElementById("js-email");
+const pattern =
+  /^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]+.[A-Za-z0-9]+$/;
+form.addEventListener("input", (e) => {
+  /*メールアドレスのパターンにマッチするかチェック*/
+  if (pattern.test(form.value)) {
+    result.textContent = "正しいメールアドレスです";
+    result.classList.add("text-blue-500");
+    result.classList.remove("text-red-500");
+  } else {
+    result.textContent = "正しいメールアドレスを入力ください";
+    result.classList.add("text-red-500");
+    result.classList.remove("text-blue-500");
+  }
+});
+form.addEventListener("blur", () => {
+  result.textContent = "";
+});
