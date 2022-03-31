@@ -3,7 +3,7 @@ session_start();
 require(__DIR__ . '/parts/flash.php');
 // Login済だったらTopPageへ戻る
 if (isset($_SESSION["user_id"])) {
-  header("Location: ../dist/index.php");
+  header("Location: ../index.php");
   exit();
 }
 
@@ -21,7 +21,7 @@ if (isset($_POST["email"], $_POST["password"])) {
         $_SESSION["login"] = true;
         $_SESSION["user_id"] = $result["user_id"];
         $_SESSION["name"] = $result["last_name"];
-        header("Location:index.php");
+        header("Location: ../index.php");
         exit();
       } else {
         flash('error', 'ログインに失敗しました。');

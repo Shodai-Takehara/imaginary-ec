@@ -17,7 +17,7 @@
 </footer>
 <footer class="footer items-center p-4 bg-neutral text-neutral-content">
   <div class="items-center grid-flow-col">
-    <a href="./index.php"><span class=" brand-name font-semibold text-xl tracking-tight">Lauren Life</span></a>
+    <a href="../index.php"><span class=" brand-name font-semibold text-xl tracking-tight">Lauren Life</span></a>
     <p>Copyright © 2022 - All right reserved</p>
   </div>
   <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end mr-4">
