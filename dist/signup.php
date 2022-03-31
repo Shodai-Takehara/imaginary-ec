@@ -106,9 +106,11 @@ foreach (array('info', 'success', 'warning', 'error') as $key) {
         </aside>
       </div>
       <div class="mb-4 pt-3 rounded bg-gray-200">
-        <label class="block text-gray-700 text-xs font-bold mb-2 ml-3" for="email">メールアドレス</label>
+
+        <label class="block text-gray-700 text-xs font-bold mb-2 ml-3" for="email">メールアドレス<span id="js-email" class="ml-5"></span></label>
         <input type="email" id="email" name="email" required class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-zinc-600 transition duration-500 px-3 pb-3; }" />
       </div>
+
       <div class="mb-4 pt-3 rounded bg-gray-200">
         <label class="block text-gray-700 text-xs font-bold mb-2 ml-3" for="phone">電話番号 <span class="text-gray-500">(ハイフンなし)</span></label>
         <input type="text" id="phone" name="phone" class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-zinc-600 transition duration-500 px-3 pb-3; }" />

@@ -25,7 +25,7 @@ if (isset($_SESSION["user_id"])) {
           <input type="email" name="email" required autofocus class="bg-gray-200 rounded w-full text-gray-700 focus:outline-none border-b-4 border-gray-300 focus:border-zinc-700 transition duration-500 px-3 pb-3" />
         </div>
         <div class="flex justify-end">
-          <a href="./signup.php" class="text-xs text-zinc-600 hover:text-zinc-700 hover:underline mb-6">ログインはこちら</a>
+          <a href="./login.php" class="text-xs text-zinc-600 hover:text-zinc-700 hover:underline mb-6">ログインはこちら</a>
         </div>
         <div class="flex justify-end">
           <a href="./signup.php" class="text-xs text-zinc-600 hover:text-zinc-700 hover:underline mb-4">新規登録の方はこちら</a>
