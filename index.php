@@ -131,7 +131,7 @@ if (!isset($_SESSION)) {
     <div>
       <span class="footer-title">Company</span>
       <a href="#" class="link link-hover">会社概要</a>
-      <a href="#" class="link link-hover">お問合せ</a>
+      <a href="https://docs.google.com/forms/d/1PEGUZp8Nz7jh-RMS1mWFiQRbamYkRh3dFncQxsNK3ng/edit" target="_blank" class="link link-hover">お問合せ</a>
     </div>
     <div>
       <span class="footer-title">Legal</span>
