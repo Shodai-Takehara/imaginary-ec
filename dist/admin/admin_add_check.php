@@ -1,6 +1,6 @@
 <?php
 require_once "../common/admin_header.php";
-session_regenerate_id(true);
+// session_regenerate_id(true);
 if (isset($_SESSION["login"])) {
   echo $_SESSION["admin_name"] . "さんログイン中";
   echo "<br><br>";
