@@ -1,14 +1,14 @@
 <?php
-// require_once "../common/admin_header.php";
-// // session_regenerate_id(true);
-// if (isset($_SESSION["login"])) {
-//   echo $_SESSION["admin_name"] . "さんログイン中";
-//   echo "<br><br>";
-// } else {
-//   echo "ログインしていません。<br><br>";
-//   echo "<a href='admin_login.php'>ログイン画面へ</a>";
-//   exit();
-// }
+require_once "../common/admin_header.php";
+// session_regenerate_id(true);
+if (isset($_SESSION["login"])) {
+  echo $_SESSION["admin_name"] . "さんログイン中";
+  echo "<br><br>";
+} else {
+  echo "ログインしていません。<br><br>";
+  echo "<a href='admin_login.php'>ログイン画面へ</a>";
+  exit();
+}
 
 ?>
 
@@ -38,6 +38,7 @@
   $gender = $post["gender"];
   $image = $_FILES["image"];
   $description = $post["description"];
+  var_dump($image["name"]);
 
 
   if (empty($name)) {
@@ -140,7 +141,7 @@
     echo "<input type='hidden' name='gender' value='" . $gender . "'>";
     echo "<input type='hidden' name='stock' value='" . $stock . "'>";
     echo "<input type='hidden' name='size' value='" . $size . "'>";
-    echo "<input type='hidden' name='image' value='" . $image['name'] . "'>";
+    echo "<input type='hidden' name='image' value='" . $image["name"] . "'>";
     echo "<input type='hidden' name='description' value='" . $description . "'>";
     echo "<input type='button' onclick='history.back()' value='戻る'>";
     echo "<input type='submit' value='登録'>";

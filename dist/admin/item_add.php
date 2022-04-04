@@ -1,14 +1,13 @@
 <?php
-// require_once "../common/admin_header.php";
-// // session_regenerate_id(true);
-// if (isset($_SESSION["login"])) {
-//   echo $_SESSION["admin_name"] . "さんログイン中";
-//   echo "<br><br>";
-// } else {
-//   echo "ログインしていません。<br><br>";
-//   echo "<a href='admin_login.php'>ログイン画面へ</a>";
-//   exit();
-// }
+require_once "../common/admin_header.php";
+if (isset($_SESSION["login"])) {
+  echo $_SESSION["admin_name"] . "さんログイン中";
+  echo "<br><br>";
+} else {
+  echo "ログインしていません。<br><br>";
+  echo "<a href='admin_login.php'>ログイン画面へ</a>";
+  exit();
+}
 
 ?>
 <!DOCTYPE html>
@@ -33,7 +32,6 @@
     <input type="text" name="sale_price">
     <br><br>
     カテゴリー<br>
-    <!-- <?php require_once("../common./common.php"); ?> -->
     <select name="category">
       <option value="1">トップス</option>
       <option value="2">アウター</option>
@@ -73,14 +71,14 @@
     <br><br>
     ジェンダー<br>
     <select name="gender">
-      <option value="MAN">男性</option>
-      <option value="WOMEN">女性</option>
-      <option value="UNISEX">ユニセックス</option>
+      <option value="1">男性</option>
+      <option value="2">女性</option>
+      <option value="3">ユニセックス</option>
     </select>
     <br><br>
     画像<br>
     <input type="file" name="image" accept="image/*" onChange="imgPreView(event)">
-    <div id="preview" style="width: 300px;"></div>
+    <div id="preview"></div>
     <br><br>
     商品説明<br>
     <textarea name="description" style="width: 500px; height: 100px;"></textarea>

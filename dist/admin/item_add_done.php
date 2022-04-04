@@ -1,14 +1,14 @@
 <?php
-// require_once "../common/admin_header.php";
-// // session_regenerate_id(true);
-// if (isset($_SESSION["login"])) {
-//   echo $_SESSION["admin_name"] . "さんログイン中";
-//   echo "<br><br>";
-// } else {
-//   echo "ログインしていません。<br><br>";
-//   echo "<a href='admin_login.php'>ログイン画面へ</a>";
-//   exit();
-// }
+require_once "../common/admin_header.php";
+// session_regenerate_id(true);
+if (isset($_SESSION["login"])) {
+  echo $_SESSION["admin_name"] . "さんログイン中";
+  echo "<br><br>";
+} else {
+  echo "ログインしていません。<br><br>";
+  echo "<a href='admin_login.php'>ログイン画面へ</a>";
+  exit();
+}
 
 ?>
 
@@ -35,8 +35,8 @@
     $stock = $post["stock"];
     $size = $post["size"];
     $gender = $post["gender"];
+    $image = $post["image"];
     $description = $post["description"];
-    var_dump($iamge);
 
     require_once("../common/basedb.php");
 
@@ -51,7 +51,7 @@
     $stm->bindValue(":stock", $stock, PDO::PARAM_INT);
     $stm->bindValue(":size", $size, PDO::PARAM_STR);
     $stm->bindValue(":gender", $gender, PDO::PARAM_INT);
-    $stm->bindValue(":image", $_POST("image"));
+    $stm->bindValue(":image", $image);
     $stm->bindValue(":description", $description, PDO::PARAM_STR);
     $stm->execute();
     $result = $stm->fetch(PDO::FETCH_ASSOC);
