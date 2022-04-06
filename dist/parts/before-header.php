@@ -33,7 +33,7 @@ if (!isset($_SESSION)) {
       </div>
       <div class="js-hamburger w-full block flex-grow lg:flex lg:items-center lg:w-auto hidden">
         <div class="text-sm lg:flex-grow select-none">
-          <a href="#" class="js-list-index block mt-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2 mr-4">
+          <a href="./items/index.php" class="js-list-index block mt-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2 mr-4">
             商品一覧
           </a>
           <a href="#" class="js-list-men block mt-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2 mr-4">

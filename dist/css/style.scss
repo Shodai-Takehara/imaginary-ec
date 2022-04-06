@@ -136,3 +136,26 @@ $black: #000;
     cursor: pointer;
   }
 }
+
+.js-like-btn {
+  font-size: 20px;
+  cursor: pointer;
+
+  &.already {
+    color: #FF00B8;
+  }
+}
+
+.women {
+  background: #FF00B8;
+}
+
+.men {
+  background: aqua !important;
+}
+
+.unisex {
+  background: chartreuse !important;
+}
+
+
