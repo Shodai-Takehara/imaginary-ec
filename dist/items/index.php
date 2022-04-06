@@ -48,7 +48,7 @@
         $image = "<img src='../admin/images/" . $result['image'] . "'>";
       }
       echo <<<EOF
-        <div class="px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
+        <div class="flex px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4 h-500">
           <div class="card w-95 bg-base-100 shadow-xl mt-10">
             <figure>{$image}</figure>
             <div class="card-body">
