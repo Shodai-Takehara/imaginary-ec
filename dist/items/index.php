@@ -1,4 +1,6 @@
-  <?php include("../parts/after-header.php") ?>
+  <?php include("../parts/after-header.php");
+  require_once("../common/common.php");
+  ?>
   <?php
   try {
     require_once("../common/basedb.php");
@@ -33,14 +35,24 @@
         $category = "Accessory";
       }
 
-      if (!isset($_SESSION['login'])) {
-        $likeLink = "<a href='#' onclick='clickEvent()'><i class='far fa-heart'></i></a>";
+      $item_id = $result["item_id"];
+      if (isset($_SESSION["user_id"])) {
+        $user_id = $_SESSION["user_id"];
       } else {
-        $likeLink = "<a href='#'><i class='js-like-btn far fa-heart'></i></a>";
+        $user_id = null;
       }
-
+      $likeClass = isGood($user_id, $item_id) ? "fas fa-heart already" : "far fa-heart";
       $price = number_format($result["sale_price"]);
       $size = strtoupper($result["size"]);
+
+      if (!isset($_SESSION['login'])) {
+        $likeLink = "<a href='javascript:void(0)' onclick='clickEvent()'><i class='far fa-heart'></i></a>";
+      } else if (isGood($user_id, $item_id) === 1) {
+        $likeLink = "<a href='javascript:void(0)'><i class='js-like-btn far fa-heart'></i></a>";
+      } else {
+        $likeLink = "<a href='javascript:void(0)'><i class='js-like-btn {$likeClass}'></i></a>";
+      }
+
       echo "<a href='detail.php?id=" . $id . "'>";
       if (empty($result["image"])) {
         $image = "";
@@ -54,13 +66,15 @@
             <div class="card-body">
               <h2 class="card-title">
               {$result["name"]}
-                <div class="badge badge-{$class}">{$gender}</div>
+              <div class="badge badge-{$class}">{$gender}</div>
               </h2>
-              <p>Price : {$price}円</p>
-              <p>SIZE : {$size}</p>
+              <p class="mt-3">Price : {$price}円</p>
+              <p class="my-2">SIZE : {$size}</p>
               <div class="card-actions justify-between">
                 <div class="badge badge-outline">{$category}</div>
-                {$likeLink}
+                <div class="like" data-itemid="{$item_id}" data-userid="{$user_id}">
+                  {$likeLink}
+                </div>
               </div>
             </div>
           </div>
@@ -75,6 +89,8 @@
     echo "<a href='../../index.php'>ログイン画面へ</a>";
   }
   ?>
+  <script src="../javascript/jquery-3.6.0.min.js"></script>
+  <script src="../javascript/like.js"></script>
   <script>
     function clickEvent() {
       console.log('hoge');

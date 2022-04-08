@@ -141,15 +141,4 @@ $(function () {
   $(".dismiss").on("click", () => {
     $(".js-flash").fadeOut("slow");
   });
-
-  // いいねボタンの色を変える
-  $(".js-like-btn").on("click", function () {
-    if ($(this).hasClass("far")) {
-      $(this).removeClass("far");
-      $(this).addClass("fa already");
-    } else {
-      $(this).removeClass("fa already");
-      $(this).addClass("far");
-    }
-  });
 });
