@@ -54,7 +54,7 @@ if (!isset($_SESSION)) {
           </form>
         </div>
         <div class="text-sm lg:flex-none select-none">
-          <a href="#" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
+          <a href="./dist/user/likes.php" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
             <i class="far fa-heart"></i> お気に入り
           </a>
           <a href="#" class="block mt-4 mr-2 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">

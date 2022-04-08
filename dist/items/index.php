@@ -5,11 +5,15 @@
   try {
     require_once("../common/basedb.php");
 
-    $sql = "SELECT item_id, name, sale_price, category_id, gender, image, size FROM items WHERE1";
+    $sql = "SELECT item_id, name, sale_price, category_id, gender, image, size 
+            FROM items WHERE1 
+            ORDER BY item_id DESC";
     $stm = $pdo->prepare($sql);
     $stm->execute();
+    $count = $stm->rowCount();
 
-    echo "<div class='container my-12 mx-auto px-4 md:px-12'>";
+    echo "<div class='container my-10 mx-auto px-4 md:px-12'>";
+    echo "<div class='badge badge-outline p-5'><p>対象の商品が $count 件ヒットしました。</p></div>";
     echo "<div class='flex flex-wrap -mx-1 lg:-mx-4'>";
 
     while ($result = $stm->fetch(PDO::FETCH_ASSOC)) {
@@ -61,7 +65,7 @@
       }
       echo <<<EOF
         <div class="flex px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4 h-500">
-          <div class="card w-95 bg-base-100 shadow-xl mt-10">
+          <div class="card w-95 bg-base-100 shadow-xl mt-8">
             <figure>{$image}</figure>
             <div class="card-body">
               <h2 class="card-title">
@@ -70,8 +74,9 @@
               </h2>
               <p class="mt-3">Price : {$price}円</p>
               <p class="my-2">SIZE : {$size}</p>
-              <div class="card-actions justify-between">
+              <div class="card-actions justify-between align-top">
                 <div class="badge badge-outline">{$category}</div>
+                <div class="bag"><a href='javascript:void(0)'><i class="fas fa-shopping-bag"></i></a></div>
                 <div class="like" data-itemid="{$item_id}" data-userid="{$user_id}">
                   {$likeLink}
                 </div>

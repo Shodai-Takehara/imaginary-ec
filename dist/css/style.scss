@@ -60,6 +60,11 @@ $black: #000;
   min-height: calc(100vh - 224px);
 }
 
+/* お気に入り画面調整 */
+.body-like {
+  min-height: calc(100vh - 372px);
+}
+
 /* hamburgermenu */
 .hamburger {
   width: 40px;
@@ -156,6 +161,10 @@ $black: #000;
 
 .unisex {
   background: chartreuse !important;
+}
+
+.bag {
+  font-size: 19px;
 }
 
 
