@@ -66,6 +66,11 @@
   min-height: calc(100vh - 224px);
 }
 
+/* お気に入り画面調整 */
+.body-like {
+  min-height: calc(100vh - 372px);
+}
+
 /* hamburgermenu */
 .hamburger {
   width: 40px;
@@ -138,4 +143,28 @@
   float: right;
   font-size: 14px;
   cursor: pointer;
+}
+
+.js-like-btn {
+  font-size: 20px;
+  cursor: pointer;
+}
+.js-like-btn.already {
+  color: #FF00B8;
+}
+
+.women {
+  background: #FF00B8;
+}
+
+.men {
+  background: aqua !important;
+}
+
+.unisex {
+  background: chartreuse !important;
+}
+
+.bag {
+  font-size: 19px;
 }/*# sourceMappingURL=style.css.map */
