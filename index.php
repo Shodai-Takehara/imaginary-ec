@@ -91,7 +91,7 @@ if (!isset($_SESSION)) {
               <?php if (isset($_SESSION["login"]))
                 echo <<<EOF
                 <li>
-                  <a href="#" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-black hover:underline underline-offset-2">
+                  <a href="./dist/user/user_detail.php" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-black hover:underline underline-offset-2">
                   <i class="fas fa-file-alt"></i> マイページ
                   </a>
                 </li>
