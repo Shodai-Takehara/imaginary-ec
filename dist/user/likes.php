@@ -67,7 +67,7 @@ try {
       $likeLink = "<a href='javascript:void(0)'><i class='js-like-btn {$likeClass}'></i></a>";
     }
 
-    echo "<a href='detail.php?id=" . $id . "'>";
+    echo "<a href='../items/detail.php?id=" . $id . "'>";
     if (empty($result["image"])) {
       $image = "";
     } else {
@@ -109,7 +109,6 @@ try {
 <script src="../javascript/like.js"></script>
 <script>
   function clickEvent() {
-    console.log('hoge');
     alert('ログインが必要です！');
     return false;
   }

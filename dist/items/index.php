@@ -2,16 +2,36 @@
   require_once("../common/common.php");
   ?>
   <?php
+  if (empty($_GET['gender'])) {
+    $gender = 0;
+  } else if ($_GET['gender'] == 1) {
+    $gender = 1;
+  } else if ($_GET['gender'] == 2) {
+    $gender = 2;
+  } else if ($_GET['gender'] == 3) {
+    $gender = 3;
+  }
+
   try {
     require_once("../common/basedb.php");
 
-    $sql = "SELECT item_id, name, sale_price, category_id, gender, image, size 
-            FROM items WHERE1 
-            ORDER BY item_id DESC";
+    if ($gender == 0) {
+      $sql = "SELECT item_id, name, sale_price, category_id, gender, image, size 
+              FROM items WHERE1 
+              ORDER BY item_id DESC";
+    } else {
+      $sql = "SELECT item_id, name, sale_price, category_id, gender, image, size 
+              FROM items WHERE1 
+              WHERE gender = :gender
+              ORDER BY item_id DESC";
+    }
+
     $stm = $pdo->prepare($sql);
+    if ($gender != 0) {
+      $stm->bindValue(":gender", $gender, PDO::PARAM_INT);
+    }
     $stm->execute();
     $count = $stm->rowCount();
-
     echo "<div class='container my-10 mx-auto px-4 md:px-12'>";
     echo "<div class='badge badge-outline p-5'><p>対象の商品が $count 件ヒットしました。</p></div>";
     echo "<div class='flex flex-wrap -mx-1 lg:-mx-4'>";

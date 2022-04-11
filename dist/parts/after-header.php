@@ -33,14 +33,14 @@ if (!isset($_SESSION)) {
           <a href="../items/index.php" class="js-list-index block mt-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2 mr-4">
             商品一覧
           </a>
-          <a href="#" class="js-list-men block mt-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2 mr-4">
+          <a href="../items/index.php?gender=1" class="js-list-men block mt-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2 mr-4">
             MENS
           </a>
-          <a href="#" class="js-list-women block mt-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2 mr-4">
+          <a href="../items/index.php?gender=2" class="js-list-women block mt-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2 mr-4">
             WOMENS
           </a>
-          <a href="#" class="js-list-sale block mt-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
-            SALE
+          <a href="../items/index.php?gender=3" class="js-list-sale block mt-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
+            UNISEX
           </a>
         </div>
         <div class="flex-grow invisible lg:visible select-none">
@@ -50,9 +50,20 @@ if (!isset($_SESSION)) {
           </form>
         </div>
         <div class="text-sm lg:flex-none select-none">
-          <a href="../user/likes.php" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
-            <i class="far fa-heart"></i> お気に入り
-          </a>
+          <?php if (isset($_SESSION["login"]))
+            echo <<<EOF
+              <a href="../user/likes.php" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
+                <i class="far fa-heart"></i> お気に入り
+              </a>
+            EOF;
+          ?>
+          <?php if (!isset($_SESSION["login"]))
+            echo <<<EOF
+              <a href="javascript:void(0)" onclick="return clickEvent();" class="block mt-4 mr-4 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
+                <i class="far fa-heart"></i> お気に入り
+              </a>
+            EOF;
+          ?>
           <a href="#" class="block mt-4 mr-2 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
             <i class="fa fa-shopping-bag"></i> マイバッグ
           </a>

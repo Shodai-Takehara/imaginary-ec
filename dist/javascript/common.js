@@ -88,7 +88,7 @@ $(function () {
   // toppageの写真入れ替え(4箇所)
   $(".js-list-index").on("mouseover", () => {
     // Link先を対象のLinkに書き換え
-    $(".top-wrapper link").attr("href", "#");
+    $(".top-wrapper .link").attr("href", "./dist/items/index.php");
     $(".top-wrapper").css({
       backgroundImage: $(".top-wrapper")
         .css("background-image")
@@ -99,7 +99,7 @@ $(function () {
     });
   });
   $(".js-list-men").on("mouseover", () => {
-    $(".top-wrapper .link").attr("href", "#");
+    $(".top-wrapper .link").attr("href", "./dist/items/index.php?gender=1");
     $(".top-wrapper").css({
       backgroundImage: $(".top-wrapper")
         .css("background-image")
@@ -110,7 +110,7 @@ $(function () {
     });
   });
   $(".js-list-women").on("mouseover", () => {
-    $(".top-wrapper .link").attr("href", "#");
+    $(".top-wrapper .link").attr("href", "./dist/items/index.php?gender=2");
     $(".top-wrapper").css({
       backgroundImage: $(".top-wrapper")
         .css("background-image")
@@ -121,7 +121,7 @@ $(function () {
     });
   });
   $(".js-list-sale").on("mouseover", () => {
-    $(".top-wrapper .link").attr("href", "#");
+    $(".top-wrapper .link").attr("href", "./dist/items/index.php?gender=3");
     $(".top-wrapper").css({
       backgroundImage: $(".top-wrapper")
         .css("background-image")

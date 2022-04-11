@@ -184,3 +184,8 @@ function imgPreView(event) {
 
   reader.readAsDataURL(file);
 }
+
+function clickEvent() {
+  alert("ログインが必要です！");
+  return false;
+}
