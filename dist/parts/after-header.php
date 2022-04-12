@@ -19,7 +19,8 @@ if (!isset($_SESSION)) {
 
 <body>
   <header id="js-header" class="sticky top-0 z-10">
-    <nav class="flex sticky items-center justify-between flex-wrap bg-neutral p-7">
+    <nav class="flex sticky items-center justif
+    y-between flex-wrap bg-neutral p-7">
       <div class="flex items-center flex-shrink-0 text-white mr-6">
         <a href="../../index.php"><span class="brand-name font-semibold text-xl tracking-tight">Lauren Life</span></a>
       </div>
@@ -64,8 +65,8 @@ if (!isset($_SESSION)) {
               </a>
             EOF;
           ?>
-          <a href="#" class="block mt-4 mr-2 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
-            <i class="fa fa-shopping-bag"></i> マイバッグ
+          <a href="#" class="shopbag block mt-4 mr-2 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
+            <i class="fa fa-shopping-bag"></i> <span class="bag-num" data-bagnum="">マイバッグ</span>
           </a>
           <div class="dropdown dropdown-hover">
             <label tabindex="0" class="btn"><i class="fas fa-caret-square-down"></i>&nbsp;MENU</label>
