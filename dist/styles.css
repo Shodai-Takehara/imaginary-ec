@@ -11216,11 +11216,6 @@ body[dir="rtl"] .checkbox:checked,
   outline-offset: 2px;
 }
 
-.active\:bg-pink-600:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(219 39 119 / var(--tw-bg-opacity));
-}
-
 .active\:bg-purple-600:active {
   --tw-bg-opacity: 1;
   background-color: rgb(147 51 234 / var(--tw-bg-opacity));
@@ -11333,6 +11328,14 @@ body[dir="rtl"] .checkbox:checked,
     width: 50%;
   }
 
+  .lg\:w-3\/5 {
+    width: 60%;
+  }
+
+  .lg\:w-2\/5 {
+    width: 40%;
+  }
+
   .lg\:w-1\/4 {
     width: 25%;
   }
@@ -11351,18 +11354,6 @@ body[dir="rtl"] .checkbox:checked,
 
   .lg\:w-9\/12 {
     width: 75%;
-  }
-
-  .lg\:w-2\/3 {
-    width: 66.666667%;
-  }
-
-  .lg\:w-3\/5 {
-    width: 60%;
-  }
-
-  .lg\:w-2\/5 {
-    width: 40%;
   }
 
   .lg\:flex-none {
