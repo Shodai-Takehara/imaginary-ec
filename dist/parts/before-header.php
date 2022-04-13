@@ -67,12 +67,12 @@ if (!isset($_SESSION)) {
               </a>
             EOF;
           ?>
-          <a href="#" class="block mt-4 mr-2 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
+          <a href="#" class="shopbag block mt-4 mr-2 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
             <i class="fa fa-shopping-bag"></i> <span class="bag-num" data-bagnum="">マイバッグ</span>
           </a>
-          <div class="dropdown dropdown-hover">
+          <div class="dropdown lg:dropdown-end dropdown-hover">
             <label tabindex="0" class="btn"><i class="fas fa-caret-square-down"></i>&nbsp;MENU</label>
-            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+            <ul tabindex="1" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-40">
               <?php if (!isset($_SESSION["login"]))
                 echo <<<EOF
                 <li>
