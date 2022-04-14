@@ -47,14 +47,15 @@ try {
   }
   $likeClass = isGood($user_id, $item_id) ? "fas fa-heart already" : "far fa-heart";
   if (!isset($_SESSION['login'])) {
-    $likeLink = "<a href='javascript:void(0)' onclick='clickEvent()'><i class='far fa-heart absolute right-7'></i></a>";
+    $likeLink = "<a href='javascript:void(0)' onclick='clickEvent()'><i class='far fa-heart absolute right-14'></i></a>";
   } else if (isGood($user_id, $item_id) === 1) {
-    $likeLink = "<a href='javascript:void(0)'><i class='js-like-btn far fa-heart absolute right-7'></i></a>";
+    $likeLink = "<a href='javascript:void(0)'><i class='js-like-btn far fa-heart absolute right-14'></i></a>";
   } else {
-    $likeLink = "<a href='javascript:void(0)'><i class='js-like-btn {$likeClass} absolute right-7'></i></a>";
+    $likeLink = "<a href='javascript:void(0)'><i class='js-like-btn {$likeClass} absolute right-14'></i></a>";
   }
 
   $image = $result["image"];
+  $image_path = '../admin/images/' . $image;
   $image_template = '<img class="item-image" src="../admin/images/%s">';
   $image_tag = sprintf($image_template, $image);
 } catch (Exception $e) {
@@ -66,11 +67,14 @@ try {
 ?>
 <main class='container my-10 mx-auto px-4 md:px-12 flex flex-wrap'>
   <div class='w-full lg:w-3/5 relative mt-10'>
-    <?php echo $image_tag ?>
+    <div class="easyzoom easyzoom--overlay">
+      <a href="<?php echo $image_path ?>">
+        <?php echo $image_tag ?>
+      </a>
+    </div>
     <div class="like" data-itemid="<?php echo $item_id ?>" data-userid="<?php echo $user_id ?>">
       <?php echo $likeLink ?>
     </div>
-
   </div>
   <div class='w-full lg:w-2/5'>
     <div class="overflow-x-auto">
@@ -115,5 +119,15 @@ try {
   </div>
 </main>
 <script src="../javascript/jquery-3.6.0.min.js"></script>
+<script src="../javascript/easyzoom.js"></script>
 <script src="../javascript/like.js"></script>
+<script>
+  (function($) {
+    jQuery(document).ready(function() {
+      $('.easyzoom').easyZoom();
+    });
+
+  })(jQuery);
+</script>
+
 <?php include("../parts/after_footer.php"); ?>

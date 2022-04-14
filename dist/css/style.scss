@@ -169,7 +169,7 @@ $black: #000;
 
 .shopbag {
   position: relative;
-
+  
   .bag-num::after {
     content: attr(data-bagnum);
     text-align: center;
@@ -182,5 +182,11 @@ $black: #000;
     border: #000;
     border-radius: 50%;
   }
+}
+
+.item-image {
+  width: 90%;
+  margin-bottom: 30px;
+  border-radius: 10px;
 }
 

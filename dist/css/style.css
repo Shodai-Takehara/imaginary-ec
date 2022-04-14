@@ -183,4 +183,10 @@
   width: 20px;
   border: #000;
   border-radius: 50%;
+}
+
+.item-image {
+  width: 90%;
+  margin-bottom: 30px;
+  border-radius: 10px;
 }/*# sourceMappingURL=style.css.map */
