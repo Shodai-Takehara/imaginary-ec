@@ -11,7 +11,7 @@ if (!isset($_SESSION["admin_id"])) {
     $result = $stm->fetch(PDO::FETCH_ASSOC);
     if ($result) {
       if (password_verify($_POST["password"], $result["password"])) {
-        $_SESSION["login"] = true;
+        $_SESSION["admin_login"] = true;
         $_SESSION["admin_id"] = $result["admin_id"];
         $_SESSION["admin_name"] = $result["name"];
       } else {

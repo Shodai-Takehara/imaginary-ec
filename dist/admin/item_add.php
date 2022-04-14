@@ -1,6 +1,6 @@
 <?php
 require_once "../common/admin_header.php";
-if (isset($_SESSION["login"])) {
+if (isset($_SESSION["admin_login"])) {
   echo $_SESSION["admin_name"] . "さんログイン中";
   echo "<br><br>";
 } else {
