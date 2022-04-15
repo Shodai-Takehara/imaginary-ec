@@ -68,7 +68,7 @@ if (!isset($_SESSION)) {
               </a>
             EOF;
           ?>
-          <a href="#" class="block mt-4 mr-2 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
+          <a href="./dist/items/mybag.php" class="block mt-4 mr-2 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
             <i class="fa fa-shopping-bag"></i> マイバッグ
           </a>
           <div class="dropdown lg:dropdown-end dropdown-hover">

@@ -14,6 +14,7 @@ if (!isset($_SESSION)) {
   <link rel="stylesheet" href="../styles.css" />
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/easyzoom.css">
+  <link rel="stylesheet" href="../css/mybag.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <title>Lauren Life</title>
 </head>
@@ -66,7 +67,7 @@ if (!isset($_SESSION)) {
               </a>
             EOF;
           ?>
-          <a href="#" class="shopbag block mt-4 mr-2 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
+          <a href="../items/mybag.php" class="shopbag block mt-4 mr-2 lg:inline-block lg:mt-0 text-white hover:underline underline-offset-2">
             <i class="fa fa-shopping-bag"></i> <span class="bag-num" data-bagnum="">マイバッグ</span>
           </a>
           <div class="dropdown lg:dropdown-end dropdown-hover">

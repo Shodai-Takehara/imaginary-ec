@@ -71,6 +71,11 @@
   min-height: calc(100vh - 372px);
 }
 
+/* お気に入り画面調整 */
+.body-bag {
+  min-height: calc(100vh - 390px);
+}
+
 /* hamburgermenu */
 .hamburger {
   width: 40px;

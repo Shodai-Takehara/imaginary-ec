@@ -10,6 +10,8 @@
     $gender = 2;
   } else if ($_GET['gender'] == 3) {
     $gender = 3;
+  } else {
+    $gender = 0;
   }
 
   try {
