@@ -65,6 +65,11 @@ $black: #000;
   min-height: calc(100vh - 372px);
 }
 
+/* お気に入り画面調整 */
+.body-bag {
+  min-height: calc(100vh - 353px);
+}
+
 /* hamburgermenu */
 .hamburger {
   width: 40px;
@@ -167,4 +172,25 @@ $black: #000;
   font-size: 19px;
 }
 
+.shopbag {
+  position: relative;
+  
+  .bag-num::after {
+    content: attr(data-bagnum);
+    text-align: center;
+    position: absolute;
+    opacity: 0.9;
+    top: 50%;
+    right: -17%;
+    background-color: #dc3545;
+    width: 20px;
+    border: #000;
+    border-radius: 50%;
+  }
+}
 
+.item-image {
+  width: 90%;
+  margin-bottom: 30px;
+  border-radius: 10px;
+}
