@@ -41,11 +41,13 @@ try {
         } elseif ($result["category_id"] === 4) {
           $category = "Accessory";
         }
-        $price = number_format($result["sale_price"]);
         $image = "<img src='../admin/images/" . $result["image"] . "' width='150'>";
         $item_total = $result["sale_price"];
         $size = strtoupper($result["size"]);
-        $total += $item_total;
+        $tax = floor($item_total * 0.1);
+        $price = number_format($result["sale_price"] + $tax);
+        $formatTax = number_format($tax);
+        $total += $item_total + $tax;
         $total_price = number_format($total);
         $totalResult = number_format($total);
         echo <<<EOF
@@ -76,7 +78,10 @@ try {
               </button>
             </div>
       
-            <div class="price">￥ $price </div>
+            <div class="price">
+              ￥ $price <br>
+              <span style="font-size: 12px;">(Tax :￥$formatTax )</span>
+            </div>
           </div>
         EOF;
       }
@@ -84,8 +89,8 @@ try {
     echo "<div class='total-price'>合計 : ￥ $totalResult </div>";
     echo "</div>";
     echo "<div class='text-center mb-5 flex justify-around align-middle'>
-          <button class='btn btn-wide btn-accent'>購入手続きへ</button>
-        </div>";
+            <a href='./item_purchase.php' class='btn btn-wide btn-accent'>購入手続きへ</a>
+          </div>";
     echo "</div>";
   } else {
     echo "<div class='body-bag'>";
