@@ -51,6 +51,9 @@ try {
                 <a href="./user_edit.php" class="bg-purple-500 active:bg-purple-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1" type="button" style="transition: all 0.15s ease 0s;">
                   編集ページ
                 </a>
+                <a href="#" class="bg-purple-800 active:bg-purple-900 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1" type="button" style="transition: all 0.15s ease 0s;">
+                  購入履歴
+                </a>
               </div>
             </div>
             <div class="w-full lg:w-4/12 px-4 lg:order-1">

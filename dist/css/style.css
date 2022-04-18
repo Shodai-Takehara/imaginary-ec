@@ -73,7 +73,7 @@
 
 /* お気に入り画面調整 */
 .body-bag {
-  min-height: calc(100vh - 390px);
+  min-height: calc(100vh - 353px);
 }
 
 /* hamburgermenu */

@@ -1,5 +1,16 @@
+.shopping-cart {
+  width: 800px;
+  margin: 40px auto;
+  background: #FFFFFF;
+  box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.10);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
 .title {
   height: 60px;
+  border-top: 0.5px solid #E1E8EE;
   border-bottom: 1px solid #E1E8EE;
   padding: 20px 30px;
   color: #5E6977;
@@ -9,20 +20,20 @@
 
 .item {
   padding: 20px 30px;
-  height: 120px;
+  height: 160px;
   display: flex;
 }
 
-.item:nth-child(3) {
+.item:last-child {
   border-top: 1px solid #E1E8EE;
   border-bottom: 1px solid #E1E8EE;
 }
 
 /* Buttons -  Delete and Like */
 .buttons {
+  display: flex;
   position: relative;
   padding-top: 30px;
-  margin-right: 60px;
 }
 
 .delete-btn {
@@ -30,19 +41,20 @@
   cursor: pointer;
   width: 10px;
   height: 10px;
-  margin-right: 20px;
+  /* margin-right: 20px; */
 }
 
-.like-btn {
+/* .like-btn {
   display: inline-block;
   width: 60px;
   height: 60px;
   cursor: pointer;
-}
+} */
 
 
 /* Product Image */
 .image {
+  margin: 0 auto;
   margin-right: 50px;
 }
 
@@ -72,8 +84,8 @@
 
 /* Product Quantity */
 .quantity {
-  padding-top: 20px;
-  margin-right: 60px;
+  display: flex;
+  margin-right: 40px;
 }
 
 .quantity input {
@@ -100,13 +112,22 @@ input:focus {
 }
 
 /* Total Price */
-.total-price {
-  width: 83px;
-  padding-top: 27px;
+.price {
+  width: 80px;
+  padding-top: 45px;
   text-align: center;
   font-size: 16px;
   color: #43484D;
-  font-weight: 300;
+  font-weight: 500;
+}
+
+.total-price {
+  border-top: 1px dotted #E1E8EE;
+  text-align: right;
+  padding: 15px 0;
+  margin-right: 38px;
+  color: #43484D;
+  font-weight: 500;
 }
 
 /* Responsive */
@@ -125,6 +146,7 @@ input:focus {
 
   .image img {
     width: 50%;
+    margin: 0 auto;
   }
 
   .image,
@@ -138,15 +160,8 @@ input:focus {
   .buttons {
     margin-right: 20px;
   }
-}
-
-.shopping-cart {
-  width: 750px;
-  margin: 80px auto;
-  background: #FFFFFF;
-  box-shadow: 1px 2px 3px 0px rgba(0, 0, 0, 0.10);
-  border-radius: 6px;
-
-  display: flex;
-  flex-direction: column;
+  
+  .quantity {
+    justify-content: center;
+  }
 }

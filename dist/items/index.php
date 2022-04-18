@@ -27,7 +27,6 @@
               WHERE gender = :gender
               ORDER BY item_id DESC";
     }
-
     $stm = $pdo->prepare($sql);
     if ($gender != 0) {
       $stm->bindValue(":gender", $gender, PDO::PARAM_INT);
@@ -85,6 +84,7 @@
       } else {
         $image = "<img src='../admin/images/" . $result['image'] . "'>";
       }
+      $value = $result["item_id"];
       echo <<<EOF
         <div class="flex px-1 w-full md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4 h-500">
           <div class="card w-95 bg-base-100 shadow-xl mt-8">
@@ -98,7 +98,6 @@
               <p class="my-2">SIZE : {$size}</p>
               <div class="card-actions justify-between align-top">
                 <div class="badge badge-outline">{$category}</div>
-                <div class="bag"><a href='javascript:void(0)'><i class="fas fa-shopping-bag"></i></a></div>
                 <div class="like" data-itemid="{$item_id}" data-userid="{$user_id}">
                   {$likeLink}
                 </div>

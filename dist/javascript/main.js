@@ -189,3 +189,12 @@ function clickEvent() {
   alert("ログインが必要です！");
   return false;
 }
+
+function check() {
+  let result = confirm("Bagに追加しますか?");
+  if (result == true) {
+    return true;
+  } else {
+    return false;
+  }
+}

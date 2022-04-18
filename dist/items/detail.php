@@ -112,8 +112,12 @@ try {
           </tr>
         </tbody>
       </table>
-      <div class="text-center mt-5">
+      <div class="text-center mt-5 flex justify-around align-middle">
         <button class="btn btn-wide btn-accent">商品購入ページへ</button>
+        <form method="POST" name="bag" action="mybag.php">
+          <input type="hidden" name="item_id" value="<?php echo $_GET["id"] ?>">
+          <div class="bag"><a onclick="return check()" href='javascript:bag.submit()'><i class="fas fa-shopping-bag text-rose-500 hover:text-rose-700"></i></a></div>
+        </form>
       </div>
     </div>
   </div>
