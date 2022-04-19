@@ -88,9 +88,13 @@ try {
     }
     echo "<div class='total-price'>合計 : ￥ $totalResult </div>";
     echo "</div>";
-    echo "<div class='text-center mb-5 flex justify-around align-middle'>
-            <a href='./item_purchase.php' class='btn btn-wide btn-accent'>購入手続きへ</a>
-          </div>";
+    echo "<div class='text-center mb-5 flex justify-around align-middle'>";
+    if (isset($_SESSION["login"])) {
+      echo "<a href='./item_purchase.php' class='btn btn-wide btn-accent'>購入手続きへ</a>";
+    } else {
+      echo "<a href='../signup.php' class='btn btn-wide btn-accent'>会員登録へ</a>";
+    }
+    echo "</div>";
     echo "</div>";
   } else {
     echo "<div class='body-bag'>";
