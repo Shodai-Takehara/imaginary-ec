@@ -12,6 +12,7 @@ try {
   $stm->execute();
   $result = $stm->fetch(PDO::FETCH_ASSOC);
   $price = number_format($result["sale_price"]);
+  $tax = number_format($result["sale_price"] * 0.1);
 
   if ($result["brand_id"] === 1) {
     $brand = "Polo Ralph Lauren";
@@ -88,7 +89,7 @@ try {
           <!-- row 2 -->
           <tr>
             <th>金額</th>
-            <td class="font-black"><?php echo $price ?> 円</td>
+            <td class="font-black">¥<?php echo $price ?> <span style="font-size: 12px;">(Tax: ¥<?php echo $tax ?>)</span></td>
           </tr>
           <!-- row 3 -->
           <tr class="active">
