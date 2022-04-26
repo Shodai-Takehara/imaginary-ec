@@ -156,13 +156,13 @@ if (!isset($_SESSION)) {
       <p>Copyright © 2022 - All right reserved</p>
     </div>
     <div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end mr-4">
-      <a href="#">
+      <a href="https://twitter.com/42_ogi" target="_blank">
         <i class="fab fa-twitter-square fa-2x"></i>
       </a>
-      <a href="#">
+      <a href="https://instagram.com/ogixxx/" target="_blank">
         <i class="fab fa-instagram fa-2x"></i>
       </a>
-      <a href="#">
+      <a href="https://facebook.com/higo.hh.bb.moccos" target="_blank">
         <i class="fab fa-facebook-square fa-2x"></i>
       </a>
     </div>

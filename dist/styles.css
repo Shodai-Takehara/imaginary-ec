@@ -11361,11 +11361,6 @@ body[dir="rtl"] .checkbox:checked,
   color: rgb(63 63 70 / var(--tw-text-opacity));
 }
 
-.hover\:text-teal-700:hover {
-  --tw-text-opacity: 1;
-  color: rgb(15 118 110 / var(--tw-text-opacity));
-}
-
 .hover\:text-rose-700:hover {
   --tw-text-opacity: 1;
   color: rgb(190 18 60 / var(--tw-text-opacity));
@@ -11406,21 +11401,6 @@ body[dir="rtl"] .checkbox:checked,
 .active\:bg-purple-600:active {
   --tw-bg-opacity: 1;
   background-color: rgb(147 51 234 / var(--tw-bg-opacity));
-}
-
-.active\:bg-teal-600:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(13 148 136 / var(--tw-bg-opacity));
-}
-
-.active\:bg-purple-700:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(126 34 206 / var(--tw-bg-opacity));
-}
-
-.active\:bg-purple-800:active {
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 33 168 / var(--tw-bg-opacity));
 }
 
 .active\:bg-purple-900:active {

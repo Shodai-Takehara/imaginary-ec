@@ -86,7 +86,6 @@ try {
               <p class="my-2">SIZE : {$size}</p>
               <div class="card-actions justify-between align-middle">
                 <div class="badge badge-outline">{$category}</div>
-                <div class="bag"><a href='javascript:void(0)'><i class="fas fa-shopping-bag"></i></a></div>
                 <div class="like" data-itemid="{$item_id}" data-userid="{$user_id}">
                   {$likeLink}
                 </div>
