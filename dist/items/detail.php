@@ -13,6 +13,7 @@ try {
   $result = $stm->fetch(PDO::FETCH_ASSOC);
   $price = number_format($result["sale_price"]);
   $tax = number_format($result["sale_price"] * 0.1);
+  $id = $_GET["id"];
 
   if ($result["brand_id"] === 1) {
     $brand = "Polo Ralph Lauren";
@@ -114,11 +115,26 @@ try {
         </tbody>
       </table>
       <div class="text-center mt-5 flex justify-around align-middle">
-        <button class="btn btn-wide btn-accent">商品購入ページへ</button>
-        <form method="POST" name="bag" action="mybag.php">
-          <input type="hidden" name="item_id" value="<?php echo $_GET["id"] ?>">
-          <div class="bag"><a onclick="return check()" href='javascript:bag.submit()'><i class="fas fa-shopping-bag text-rose-500 hover:text-rose-700"></i></a></div>
-        </form>
+        <?php if (!isset($_SESSION["login"]))
+          echo <<<EOF
+            <a href="javascript:void(0)" onclick="return clickEvent();" class="btn btn-wide btn-accent">
+            商品購入ページへ
+            </a>
+            <form method="POST" name="bag" action="mybag.php">
+              <input type="hidden" name="item_id" value="$id">
+              <div class="bag"><a onclick="return check()" href='javascript:bag.submit()'><i class="fas fa-shopping-bag text-rose-500 hover:text-rose-700"></i></a></div>
+            </form>
+          EOF;
+        ?>
+        <?php if (isset($_SESSION["login"]))
+          echo <<<EOF
+          <a href="./item_purchase.php" class="btn btn-wide btn-accent">商品購入ページへ</a>
+          <form method="POST" name="bag" action="mybag.php">
+            <input type="hidden" name="item_id" value="$id">
+            <div class="bag"><a onclick="return check()" href='javascript:bag.submit()'><i class="fas fa-shopping-bag text-rose-500 hover:text-rose-700"></i></a></div>
+          </form>
+          EOF;
+        ?>
       </div>
     </div>
   </div>
@@ -131,7 +147,6 @@ try {
     jQuery(document).ready(function() {
       $('.easyzoom').easyZoom();
     });
-
   })(jQuery);
 </script>
 

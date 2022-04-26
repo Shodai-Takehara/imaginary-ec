@@ -61,7 +61,7 @@ try {
         } elseif ($result["category_id"] === 4) {
           $category = "Accessory";
         }
-        $image = "<img src='../admin/images/" . $result["image"] . "' width='150'>";
+        $image = "<img name='image' src='../admin/images/" . $result["image"] . "' width='150'>";
         $item_total = $result["sale_price"];
         $size = strtoupper($result["size"]);
         $tax = floor($item_total * 0.1);
