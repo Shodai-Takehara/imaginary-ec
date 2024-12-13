@@ -1,7 +1,7 @@
 ﻿# 架空の EC サイト(Lauren Life)
 
 - target : ラルフ好きの 10 ～ 40 代（メインは男性）
-- `http://progress-it-school.net/class/tasks/11/2022/01sample/index.php`
+- リンクは[こちら](http://progress-it-school.net/class/tasks/11/2022/01sample/index.php)
 
 ### やらないことリスト
 
